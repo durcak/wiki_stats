@@ -1,0 +1,25 @@
+h4 Přidat stránku do seznamu
+
+#form
+  form.form action='/create' method='post'
+    input type='text' value='' name='page' class='form-control'
+    input type='submit' value='Přidat stránku' class='btn btn-primary'
+
+h4 Seznam stránek
+
+table.table
+  tr
+    th Název stránky
+    th Refresh
+    th Delete
+  - @pages.each do |page|
+    tr
+      td
+        = page[:page]
+      td
+        a href="/refresh/#{page[:id]}"
+          ' refresh
+      td
+        form action='/#{page[:id]}' method='post'
+          input type='hidden' value='delete' name='_method'
+          input type='submit' value='X'

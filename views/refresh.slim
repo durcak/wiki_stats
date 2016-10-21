@@ -1,0 +1,11 @@
+table.table
+  - if defined?(@data) && !@data['items'].nil?
+    - @data['items'].each do |item|
+      tr
+        td
+          = item['views']
+        td
+          = Time.parse(item['timestamp']).strftime('%d.%m.%Y')
+  - else
+    h3
+      span.label-info.label Tady by se měla zobrazit data!
