@@ -2,8 +2,6 @@ require 'config/database'
 require 'wiki_helper'
 require 'database_helper'
 
-require 'typhoeus'
-require 'sequel'
 require 'sinatra'
 require 'slim'
 require 'oj'
