@@ -10,4 +10,5 @@ gem 'sequel', '~> 4.39'
 gem 'rubocop', '~> 0.44.1'
 gem 'sqlite3', '~> 1.3', '>= 1.3.12'
 gem 'rerun', '~> 0.11.0'
-gem 'shotgun', '~> 0.9.2'
+# for automatic refreshing server after files change uncomment shotgun
+# gem 'shotgun', '~> 0.9.2'

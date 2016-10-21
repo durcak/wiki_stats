@@ -1,0 +1,44 @@
+Sinatra
+==========================================
+
+Druhý úkol do předmětu Ruby PV249.
+info na vyučijícího: Tomáš Hrabal - fil.hrabal@gmail.com
+
+Zadání
+------
+
+Vašim úkolem bude upravit aplikaci tak, aby stahovala informace z api wikipedie o stránkách:
+
+1. řiďte se TODO tasky v app.rb, tedy implementací refresh, delete, create a navázaných Helperů
+
+2. je třeba doimplementovat helpery WikiHelper (stahuje data z API) a DatabaseHelper (tahá data z db)
+přes konstantu DB
+
+3. `rake` spustí základní kontroly pro úkol: rubocop a testy. Před prvním spuštěním nezapomeňte
+na `bundle install`.
+  * `bundle exec rake rubocop` spustí pouze rubocop
+  * `bundle exec rake test` spustí pouze testy
+  * pro spuštění aplikace máte 2 možnosti
+  ** `thin start` (nerefreshuje změněné soubory)
+  ** můžete si v Gemfile odkomentovat shotgun (nefunguje na win) a spouštět přes `bundle exec shotgun`
+  ** po spuštění byste měli na hlavní stránce vidět již přidaný záznam s úžasným zpěvákem
+     a normalizační hvězdou Michalem Davidem, který bohužel ještě stále skládá "hudbu"
+
+Podmínky pro uznání řešení:
+
+1. nebudete upravovat soubor rubocop.yml, případně rspec testy
+2. po spuštění aplikace si budu moci přidat novou wiki stránku,
+zobrazit si statistiky stáhnuté z wikipedie, smazat stránku ze seznamu
+3. příkaz `rake` proběhne úspěšně
+
+Může se hodit
+-------------
+
+* [Sequel] http://sequel.jeremyevans.net/rdoc/files/doc/cheat_sheet_rdoc.html
+* [Typhoeus] https://github.com/typhoeus/typhoeus
+
+Odevzdání
+---------
+
+* Do 1. 11. 2016 (včetně)
+* Konzultace k úkolu na cvičení 24. 10.

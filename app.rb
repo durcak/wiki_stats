@@ -6,10 +6,9 @@ require 'sinatra'
 require 'slim'
 require 'oj'
 
-include WikiHelper
-include DatabaseHelper
-
 class WikiStats < Sinatra::Base
+  include WikiHelper
+  include DatabaseHelper
   set :method_override, true
 
   before do
@@ -24,6 +23,7 @@ class WikiStats < Sinatra::Base
   end
 
   get '/refresh/:id' do
+    # TODO
     # download data from wiki and show them in view
     # to download use WikiHelper.download_data
     # to fetch page name from DB use DatabaseHelper.get(params['id'])
@@ -31,12 +31,14 @@ class WikiStats < Sinatra::Base
   end
 
   post '/create' do
+    # TODO
     # implement creating new row in DB with
     #  DatabaseHelper.create(params['page'])
     redirect '/'
   end
 
   delete '/:id' do
+    # TODO
     # implement deleting from DB
     # use DatabaseHelper.delete(params['id'])
     redirect '/'

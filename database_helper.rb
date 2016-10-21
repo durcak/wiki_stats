@@ -9,6 +9,7 @@ module DatabaseHelper
     end
 
     def get(id)
+      # TODO
       # to implement getting from db
     end
 
@@ -17,6 +18,7 @@ module DatabaseHelper
     end
 
     def delete(id)
+      # TODO
       # to implement deleting
     end
   end
