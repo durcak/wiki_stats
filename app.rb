@@ -5,6 +5,7 @@ require 'database_helper'
 require 'sinatra'
 require 'slim'
 require 'oj'
+require 'cgi'
 
 class WikiStats < Sinatra::Base
   include WikiHelper
@@ -23,24 +24,24 @@ class WikiStats < Sinatra::Base
   end
 
   get '/refresh/:id' do
-    # TODO
-    # download data from wiki and show them in view
-    # to download use WikiHelper.download_data
-    # to fetch page name from DB use DatabaseHelper.get(params['id'])
+    page = DatabaseHelper.get(params['id'])
+    time_from = Time.at(Time.now - (7 * 86_400)).strftime('%Y%m%d')
+    time_to = Time.now.strftime('%Y%m%d')
+
+    @data = WikiHelper.download_data(escape(page), time_from, time_to)
+
     slim :refresh
   end
 
   post '/create' do
-    # TODO
-    # implement creating new row in DB with
-    #  DatabaseHelper.create(params['page'])
+    DatabaseHelper.create(params["page"])
+
     redirect '/'
   end
 
   delete '/:id' do
-    # TODO
-    # implement deleting from DB
-    # use DatabaseHelper.delete(params['id'])
+    DatabaseHelper.delete(params['id'])
+
     redirect '/'
   end
 end
